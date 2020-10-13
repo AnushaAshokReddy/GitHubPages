@@ -2,3 +2,6 @@ theme: jekyll-theme-cayman
 
 name: LearningApi Introduction
 markdown: kramdown
+
+baseurl: ""
+url: "https://Gitpagetrialanusha.github.io"
