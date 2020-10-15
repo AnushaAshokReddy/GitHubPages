@@ -116,7 +116,8 @@ public void SimpleSequenceTest()
 <code> IScore score = api.Run() as IScore; 
 </pre>
 </code>
-<br> When the pipeline starts, modules are executed in the sequenceordered as they are added to the pipeline. In this case, first action module will be executed and then perceptron algorithm. After running of the pipeline model is trained. Next common step in Machine Learning applications is called evaluation of the model. Following code in previous example shows how to evaluation (predict) the model:
+</p>
+<p>When the pipeline starts, modules are executed in the sequenceordered as they are added to the pipeline. In this case, first action module will be executed and then perceptron algorithm. After running of the pipeline model is trained. Next common step in Machine Learning applications is called evaluation of the model. Following code in previous example shows how to evaluation (predict) the model:
 <br> 
 <pre>
 <code>
@@ -151,8 +152,8 @@ double[][] testData = new double[4][];
 
 <br> The NuGet package 'LearningApi' enables the end users to use all the predefined interfaces facilitating the defined functionalities and make it easier for the end user to achieve the goal of creating a solution.</p>
 	<p>More information can be found on <a href="https://docs.microsoft.com/en-us/visualstudio/mac/nuget-walkthrough?view=vsmac-2019">More info on Nuget package..</a>
-<br> <a href="https://docs.microsoft.com/en-us/nuget/what-is-nuget">Information..</a></p>
-<br>The structure of IAlgorithm has 2 phases:
+<br> To find out more details, click on <a href="https://docs.microsoft.com/en-us/nuget/what-is-nuget">Information..</a></p>
+<p>The structure of IAlgorithm has 2 phases:
 <ol class="a">
   <li>IResult – IResult is used to set and get the final result of the algorithm and store it. We use IResult for the PREDICT phase - This is the final phase where we get the perfect output for the input provided by the user on the basis of the algorithm we give.In this prediction logic should be written as shown in  screenshot 6.
 </li>
@@ -165,11 +166,8 @@ double[][] testData = new double[4][];
 
 
 <h1>How to build the custom module and algorithm<h1>
-<p>The below solution demonstrates how to implement a custom module and a custom algorithm. In this example, the SUM and AVERAGE logic will be impemented.
-
-<br> The below example is only for reference on steps to implement a solution using LearningApi and the pipeline modules. But there is no need to build both these for every project.
-
-<br> Pipeline components are not ML algorithms. They are processing components in the middle of pipeline. They can be used to load data, to filter data or to do some pre-calculations.So, only sometimes, we use Pipieline modules in MLAlgorithms for processing of clean data and not everytime we should implement this in algorithm.</p>
+	
+   <p>The below solution demonstrates how to implement a custom module and a custom algorithm. In this example, the SUM and AVERAGE logic will be impemented.<br> The below example is only for reference on steps to implement a solution using LearningApi and the pipeline modules. But there is no need to build both these for every project.<br> Pipeline components are not ML algorithms. They are processing components in the middle of pipeline. They can be used to load data, to filter data or to do some pre-calculations.So, only sometimes, we use Pipieline modules in MLAlgorithms for processing of clean data and not everytime we should implement this in algorithm.</p>
 	
 
 
@@ -202,11 +200,12 @@ We have to change the names accordingly. Here for example, I’m leaving my proj
 	
 <h3>Step 3 : Add NuGet Package 'LearningApi' to our project :</h3>
 	<p>We should add NuGet package called LearningApi to our project by following the steps below, 
-		<p class "nav"> Right click on project (HelloWorldTutorial.sln) --> Click on ‘Manage NuGet packages..’</p>
+		
+	<p class="nav" >Right click on project (HelloWorldTutorial.sln) --> Click on ‘Manage NuGet packages..’</p>
 	<br>
-	<p class "nav"> in the pop up window --> Click on BROWSE,</p>
+	<p class="nav" >in the pop up window --> Click on BROWSE,</p>
 	<br>
-	<p class "nav"> search for LearningApi and select --> Click on SELECT button to add the NuGet package to the project. (Refer Fig. 3)</p>
+	<p class="nav" >search for LearningApi and select --> Click on SELECT button to add the NuGet package to the project. (Refer Fig. 3)</p>
 	
 	IMAGE
 	<p>Fig. 3 :Adding NuGet package to our project <br> A pop up with the packages installed along with the LearningApi NuGet package is displayed. Click on OK button.</p>
