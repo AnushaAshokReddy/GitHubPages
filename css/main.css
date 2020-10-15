@@ -57,10 +57,8 @@ ol.a {
   font-size: 1.0em;
   list-style-position: outside;
 }
-p.a {
-   font-size: 1.3em;
-   line-height: 1.3em;
-   color: grey;
+p.nav {
+   color: grey !important;
 }
 Don't
 
