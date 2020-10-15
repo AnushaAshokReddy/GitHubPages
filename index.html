@@ -105,12 +105,17 @@ public void SimpleSequenceTest()
 <p>The code shown above setups the pipeline of two modules.</p>
 <ul class="a">
   <li>First one is so called action module, which defines the custom code to be executed.</li>
-  <li>Second module is setup by following line: <br> api.UsePerceptron(0.02, 10000); </li>
+  <li>Second module injects the perceptron algorithm in the pipeline. This is setup by following line: 
+  
+  <br> api.UsePerceptron(0.02, 10000); </li>
 </ul> 
-<p>It injects the perceptron algorithm in the pipeline.
-<br> Execution of the pipeline is started with following code:
+
+<p>Execution of the pipeline is started with following code:
 <br>
-<code> IScore score = api.Run() as IScore; </code>
+<pre>
+<code> IScore score = api.Run() as IScore; 
+</pre>
+</code>
 <br> When the pipeline starts, modules are executed in the sequenceordered as they are added to the pipeline. In this case, first action module will be executed and then perceptron algorithm. After running of the pipeline model is trained. Next common step in Machine Learning applications is called evaluation of the model. Following code in previous example shows how to evaluation (predict) the model:
 <br> 
 <pre>
@@ -135,22 +140,42 @@ double[][] testData = new double[4][];
 <h1>Supported Modules and Algorithms</h1>
 
 <p>All the supported Modules and Algorithms are listed in an excel sheet. Also, the information about the documentation and coding source files availabiliy in the LearningApi repository can be found here.
+<br>
 <br> <a href="https://github.com/UniversityOfAppliedSciencesFrankfurt/LearningApi/blob/master/LearningApi/src/AlgorithmsModules%20_list.xlsx">SupportedModules and Algorithms list...</a></p>
 
 <h1>The LearningApi Concept</h1>
-<p>Open the class ‘LearningApiAlgorithm.cs’ and implement the IAlgorithm in the code which is taken from Learning Api NuGet package. IAlgorithm is in the library and it has a separate structure which we have to use in the project. 
+	<p> LearningAPI already has interfaces pre declared which we can easily access, understand and use in our project.<br> In order use LearningApi, we should install <b><em>Nuget packages</em></b> and <b><em>LearningApi</em></b> into our project.<br> Basically a NuGet package is a single ZIP file with the <b>.nupkg</b> extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number.</p> 
+     <p>Initially open the class ‘.cs’ and implement the IAlgorithm in the code which is taken from Learning Api NuGet package. IAlgorithm is in the library and it has a separate structure which we have to use in the project. 
+<br>
 <br>The structure of IAlgorithm has 2 phases:
-<ol>
-  <li>IScore – Iscore is used to set and get the final result of the algorithm and store it. We Use IScore for the PREDICT phase - This is the final phase where we get the perfect output for the input provided by the user on the basis of the algorithm we give.In this prediction logic should be written as shown in  screenshot 6.
+<ol class="a">
+  <li>IResult – IResult is used to set and get the final result of the algorithm and store it. We use IResult for the PREDICT phase - This is the final phase where we get the perfect output for the input provided by the user on the basis of the algorithm we give.In this prediction logic should be written as shown in  screenshot 6.
 </li>
-  <li>IResult – This is used to set and get the values of the variables used in the project. We use IResult in RUN ans TRAIN methods.</li>
+  <li>IScore – Iscore is used to set and get the values of the variables used in the project. We use IScore for RUN and TRAIN methods.</li>
 </ol>
-<br>RUN – This is the evaluation part where the random data will be given to our system to test whether the correct output is being displayed after the training session. Here call TRAIN method internally.
-<br>TRAIN – Here we will train  the system with our specific set of data I.e input and the output as in how to function. Algorithm of the function is written in Train as shown in screenshot5.</p>
+<br>RUN – This is the evaluation part where the random data will be given to our system to test whether the correct output is being displayed after the training session. Here, we call TRAIN method internally.
+<br>TRAIN – Here we will train the system with our specific set of data I.e input and the output as in how to function. Algorithm of the function is written in Train method.</p>
+
+  <p>Inputs for the TRAIN i.e to the algorithm is the set of data with expected outputs for few number of inputs, we train the system and then expect the predicted value to be accurate when other input is given.</p>
 
 
+<h1>How to build the custom module and algorithm<h1>
+	<p>The below solution demonstrates how to implement a custom module and a custom algorithm. In this example, the SUM and AVERAGE logic will be impemented.</p>
+	<p>The below example is only for reference on steps to implement a solution using LearningApi and the pipeline modules. But there is no need to build both these for every project.</p>
+	<p>Pipeline components are not ML algorithms. They are processing components in the middle of pipeline. They can be used to load data, to filter data or to do some pre-calculations.So, only sometimes, we use Pipieline modules in MLAlgorithms for processing of clean data and not everytime we should implement this in algorithm.</p>
+	
 
-<h1>How to use LearningApi for Modules and Algorithms</h1>
+
+<h2>Algorithm</h2>
+	<p>Prediction of 'chance of Precipitation' by calculating the average of temperature data and the average of chance of precipitation till date given. Motive is to achieve the solution using LeaningApi framework.
+
+<h2>Example Solution using LearningApi Algorithm :</h2>
+<h3>Step 1: Create a solution</h3>
+	<p>In the Visual Studio, create a new solution -</p>
+	<p class="b">Navigate to File --> New --> Project</p>
+	<p>For our example - give the project name as <em>“HelloWorldTutorial”</em></p>
+	<p>Use the selectors on the left side to choose the different types of programming languages or platforms to work with. For example, we are creating a class library with the template .NET STANDARD under the Visual C# selector as show in Fig 1.</p>
+	
 
 <p>Learning API is Machine Learning Foundation of a set of ML libraries fully implemented as .NET Standard library. It provides a unique processing API for Machine Learning solutions. Because it is implemented fully in .NET, developers do not have to bridge .NET and Python or other popular ML frameworks. It has been developed in cooperation with daenet GmbH and Frankfurt University of Applied Sciences.
 <br> Here the process/ steps to create the solution for an algorithm using different unit test methods has been explained. There are few points to know before starting to create the solution (1) SOLUTION is a folder of collection of projects (in our case, LearningApiAlgorithm and UnitTest1), (2) PROJECT is a collection of classes and the different types of projects include Console Application, Class Library, Unit Test, Windows from Applications, (3) NUGET PACKAGE NuGet is a free and open source package manager designed for the Microsoft development platform (formerly known as NuPack). NuGet is distributed as a Visual Studio extension. This package contains pre-defined functions which are readily available to use in our project.</p>
