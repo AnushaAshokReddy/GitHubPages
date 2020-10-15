@@ -102,12 +102,12 @@ public void SimpleSequenceTest()
 </pre>
 		</code>
 </p>
-<p>The code shown above setups the pipeline of two modules.
+<p>The code shown above setups the pipeline of two modules.</p>
 <ul>
   <li>First one is so called action module, which defines the custom code to be executed.</li>
   <li>Second module is setup by following line: <br> api.UsePerceptron(0.02, 10000); </li>
 </ul> 
-<br> It injects the perceptron algorithm in the pipeline.
+<p>It injects the perceptron algorithm in the pipeline.
 <br> Execution of the pipeline is started with following code:
 <br>
 <code> IScore score = api.Run() as IScore; </code>
