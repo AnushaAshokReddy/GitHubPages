@@ -29,9 +29,12 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    font-size: 1.0em;
+    line-height: 1.0em;
     color: #333;
+}
+a {
+  color: blue;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -45,6 +48,10 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+ul.a {
+  font-size: 1.0em;
+  list-style-position: outside;
 }
 Don't
 
