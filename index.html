@@ -12,7 +12,7 @@ title: LearningApi Introduction
 IMAGE 2 
 	<p> A small demo of the code is as followed : </p>
 	IMAGE 3
-	<P> LearningAPI is a foundation of Machine Learning algorithms, which can run in the pipeline of modules compatible to each other. This concept allows using of conceptually different algorithms in the same API, which consists of a chain of modules. One pipeline module is defined as implementation of interface IPipeline. 
+	<P> LearningAPI is a foundation of Machine Learning algorithms, which can run in the pipeline of modules compatible to each other. This concept allows using of conceptually different algorithms in the same API, which consists of a chain of modules. One pipeline module is defined as implementation of interface IPipeline.</p>
 
 <br> The format for IPipeline : 
 <br> 
@@ -30,7 +30,7 @@ IMAGE 2
     </pre>
 		</code>
 		
-<br>  The module receives an input TIN and context information. Usually TIN is set of data, which results as output of th eprevious module. Typically, first module in the pipeline is responsibe to provide learning data and last module in the pipeline is usually algorithm.
+<p> The module receives an input TIN and context information. Usually TIN is set of data, which results as output of th eprevious module. Typically, first module in the pipeline is responsibe to provide learning data and last module in the pipeline is usually algorithm.
 <br> Following example illustrates how setup the learning pipeline:
 <br> 
 <pre>
@@ -101,8 +101,8 @@ public void SimpleSequenceTest()
         }
 </pre>
 		</code>
-		
-<br> The code shown above setups the pipeline of two modules.
+</p>
+<p>The code shown above setups the pipeline of two modules.
 <ul>
   <li>First one is so called action module, which defines the custom code to be executed.</li>
   <li>Second module is setup by following line: <br> api.UsePerceptron(0.02, 10000); </li>
@@ -130,5 +130,5 @@ double[][] testData = new double[4][];
 
 </pre>
 </code>
-
+</p>
 </div><!-- /.blurb -->
